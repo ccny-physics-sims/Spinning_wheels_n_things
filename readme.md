@@ -2,6 +2,8 @@
 
 The wheel object is for demonstrating rotational motion. It includes displaying vectors of parts of motion and displaying the visual nature of a non-slippling rim of length S in comparison to floor distance D.
 
+![conceptual example](distance.png)
+
 ## Creating the Wheel:
 To make a wheel use the following code:
 ```javascript
@@ -41,3 +43,9 @@ The other type of decoration that you could use is **color decor** which lets yo
 
 ![color decor](colordecor.png "A simple coloring system to help you keep track of how far the wheel has rotated")
 
+to use **color decorations** set the cdecorate to true like so:
+```javascript
+my_wheel.cdecorate = true;
+```
+
+(note) by default the color decor is turned on.

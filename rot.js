@@ -12,6 +12,10 @@ var wheel = function(_x,_y,_d){
     this.rotate = false;
     this.ang = 0;
     this.ang_speed = 1;
+
+    //decorations for wheel
+    this.vdecorate = false;
+    this.cdecorate = true;
 };
 wheel.prototype.draw = function(){
     push();
@@ -43,21 +47,30 @@ wheel.prototype.draw = function(){
              (this.r-2)*sin(30*i));
     }
 
-    //tire markers (ie. points A & B) for distance S
-        //arc colors for length S
-    stroke(255,0,0);
-    strokeWeight(4);
-    noFill();
-    arc(0,0,this.d,this.d,0,180);
-    stroke(0,0,255);
-    arc(0,0,this.d,this.d,180,360);
-        //point colors
-    noStroke();
-    fill(255,0,0); //red for point A;
-    ellipse(this.r,0,10,10);
-    fill(30,30,255); //blue for point B;
-    ellipse(-this.r,0,10,10);
+    //..............................
+    // draw the decorations if any
+    //..............................
+    
+    if(this.cdecorate == true){
+        //tire markers (ie. points A & B) for distance S
+            //arc colors for length S
+        stroke(255,0,0);
+        strokeWeight(4);
+        noFill();
+        arc(0,0,this.d,this.d,0,180);
+        stroke(0,0,255);
+        arc(0,0,this.d,this.d,180,360);
+            //point colors
+        noStroke();
+        fill(255,0,0); //red for point A;
+        ellipse(this.r,0,10,10);
+        fill(30,30,255); //blue for point B;
+        ellipse(-this.r,0,10,10);
+    }
 
+    if(this.vdecorate == true){
+
+    }
     pop();
 };
 wheel.prototype.update = function(){};

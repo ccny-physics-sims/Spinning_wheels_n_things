@@ -11,10 +11,10 @@ function setup(){
                     
     w.ang_speed = 2;
     angleMode(DEGREES);
-    on = true;
 
-    //set framerate
-    //frameRate(60);
+    // "on" is used for the pause and resume at the end of file
+    // that allows for stopping/starting the sketch w/o prob.
+    on = true;
 }
 function draw(){
     background(121,209,254);
@@ -26,17 +26,6 @@ function draw(){
 
     //draw the colored streaks on the ground
     push();
-    //var colorcheck;
-    /*
-    if(w.ang >= 270 || w.ang <= 90){
-        stroke(255,0,0);
-        colorcheck = "red";
-    }
-    else{
-        stroke(0,0,255);
-        colorcheck = "blue";
-    }
-    */
     stroke(255,0,0);
     strokeWeight(3); 
     line(width/4,height/2+w.r+2,PI*w.r+width/4,height/2+w.r+2);
