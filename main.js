@@ -1,5 +1,8 @@
-//code stub.
-//
+/*Rotating wheel sketch:
+ * in this demo you can see that the distance traveled
+ * by a non slipping wheel corresponds exactly to the 
+ * distance traveled accross the ground.*/
+
 function setup(){
     createCanvas(640,480);
     w = new wheel(width/4,height/2,120);

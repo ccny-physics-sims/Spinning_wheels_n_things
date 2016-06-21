@@ -9,7 +9,7 @@ To make a wheel use the following code:
 ```javascript
 var my_wheel = new wheel(_x,_y,_d);
 ```
-### where...
+#### where...
 + _x = x position of the center of the wheel.
 + _y = y position of the center of the wheel.
 + _d = the diameter of the wheel object.
@@ -28,9 +28,11 @@ To save extra computing work, just call this once in the setup() function if you
 
 ## Wheel Decorations:
 
+### Vector Decorations
+
 Let's say that you think just a spinning wheel is too plain. There are a couple of ways to spice it up. The first thing that you can do is to show arrows on the wheel that demonstrate different vectors involved with the wheel's motion.
 
-### for example:
+#### for example:
 + velocity
 + acceleration
 + translation
@@ -39,6 +41,7 @@ Let's say that you think just a spinning wheel is too plain. There are a couple 
 
 (note -- vector decorations have not been added yet).
 
+### Color Decorations
 The other type of decoration that you could use is **color decor** which lets you keep track of when exactly half of the circle has rotated.
 
 ![color decor](colordecor.png "A simple coloring system to help you keep track of how far the wheel has rotated")

@@ -1,7 +1,6 @@
 //TODO: wheel object for rotating.
 //TODO: make a smart rotate that rotates and moves along
 //the ground at the correct (non-slipping) speed.
-//TODO: make documentation
 var wheel = function(_x,_y,_d){
     this.x = _x; //x position
     this.y = _y; //y position
@@ -16,6 +15,16 @@ var wheel = function(_x,_y,_d){
     //decorations for wheel
     this.vdecorate = false;
     this.cdecorate = true;
+
+    //arrow vectors to display
+    this.translation;
+    this.velocity;
+    this.acceleration;
+    this.angularAcc;
+    this.angularVel;
+
+    //arrow display options
+    //-> static/relative
 };
 wheel.prototype.draw = function(){
     push();
@@ -35,10 +44,6 @@ wheel.prototype.draw = function(){
     fill(0);
     ellipse(0,0,this.d*0.05,this.d*0.05); 
     
-    //test marks
-    //fill(255,255,0);
-    //ellipse(40,0,20,20);
-
     //draw the spokes of the wheel
     stroke(0);
     for(var i = 0;i<16;i++){
