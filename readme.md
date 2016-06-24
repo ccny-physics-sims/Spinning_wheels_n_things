@@ -33,13 +33,31 @@ To save extra computing work, just call this once in the setup() function if you
 Let's say that you think just a spinning wheel is too plain. There are a couple of ways to spice it up. The first thing that you can do is to show arrows on the wheel that demonstrate different vectors involved with the wheel's motion.
 
 #### for example:
-+ velocity
-+ acceleration
 + translation
 + rotation
-+ etc...
++ spinning w/o slipping
 
-(note -- vector decorations have not been added yet).
+To add a vector decoration, use the following:
+```javascript
+my_wheel.vdecorate = true;
+```
+
+Here are some of the vector decorations that you can draw.
+
+![various vector decor](vecdecor.png)\
+
+(note) currently only one of the following types of vector decorations work. It is the responsibility of the user to make sure that all of the decoration options that you do not want displayed be set to *false*. 
+
+to display translation arrows use the following:
+```javascript
+my_wheel.translation = true;
+```
+
+to display rotation arrows use the following:
+
+```javascript
+my_wheel.rotation = true;
+```
 
 ### Color Decorations
 The other type of decoration that you could use is **color decor** which lets you keep track of when exactly half of the circle has rotated.

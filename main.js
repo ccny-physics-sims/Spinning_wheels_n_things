@@ -12,6 +12,10 @@ function setup(){
     w.ang = -90;    //set the initial starting position
                     //to start on red.
                     
+    w.cdecorate = true;
+    w.vdecorate = true;
+    w.rotation = true;
+    w.translation = true;
     w.ang_speed = 2;
     angleMode(DEGREES);
 
@@ -31,9 +35,9 @@ function draw(){
     push();
     stroke(255,0,0);
     strokeWeight(3); 
-    line(width/4,height/2+w.r+2,PI*w.r+width/4,height/2+w.r+2);
+    line(width/4,height/2+w.r,PI*w.r+width/4,height/2+w.r);
     stroke(0,0,255);
-    line(width/4+PI*w.r,height/2+w.r+2,2*PI*w.r+width/4,height/2+w.r+2);
+    line(width/4+PI*w.r,height/2+w.r,2*PI*w.r+width/4,height/2+w.r);
     pop();
 
     //draw the wheel.

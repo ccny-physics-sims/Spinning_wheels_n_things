@@ -1,0 +1,5 @@
+#!/bin/bash
+# A simple script that compiles the markdown readme and opens it in google chrome.
+
+pandoc readme.md -o readme.pdf &
+google-chrome readme.pdf &

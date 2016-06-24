@@ -16,13 +16,26 @@ var wheel = function(_x,_y,_d){
     this.vdecorate = false;
     this.cdecorate = true;
 
-    //arrow vectors to display
-    this.translation;
-    this.velocity;
-    this.acceleration;
-    this.angularAcc;
-    this.angularVel;
+    //arrow vectors to display(not implemented)
+    this.translation = false;
+    this.rotation = false;
+    this.rollingNoSlip = false;
 
+    //actual arrow objects (only requires 3 to 
+    //display all of the modes)
+    var orig = createVector(this.x,this.y);
+    var temp = createVector(this.x+this.r,this.y-this.r);
+    this.a1 = new Arrow(orig,temp);
+    this.a2 = new Arrow(orig,temp);
+    this.a3 = new Arrow(orig,temp);
+    
+    this.a1.width = 10;
+    this.a2.width = 10;
+    this.a3.width = 10;
+    
+    this.a1.color = color(0,255,0);
+    this.a2.color = color(0,255,0);
+    this.a3.color = color(0,255,0);
     //arrow display options
     //-> static/relative
 };
@@ -72,9 +85,41 @@ wheel.prototype.draw = function(){
         fill(30,30,255); //blue for point B;
         ellipse(-this.r,0,10,10);
     }
-
+    pop();
+    push();
     if(this.vdecorate == true){
+        //translation vector
+        if(this.rotation == true){
+            this.a1.origin = createVector(this.x,this.y-this.r);
+            this.a1.target = createVector(this.x+this.r,this.y-this.r);
 
+            this.a2.origin = createVector(this.x,this.y+this.r);
+            this.a2.target = createVector(this.x-this.r,this.y+this.r);
+            
+            this.a1.update();
+            this.a2.update();
+            this.a1.display();
+            this.a2.display();
+        }
+        //spin vector
+        else if(this.translation == true){
+            this.a1.origin = createVector(this.x,this.y-this.r);
+            this.a1.target = createVector(this.x+this.r,this.y-this.r);
+
+            this.a2.origin = createVector(this.x,this.y);
+            this.a2.target = createVector(this.x+this.r,this.y);
+            
+            this.a3.origin = createVector(this.x,this.y+this.r);
+            this.a3.target = createVector(this.x+this.r,this.y+this.r);
+
+            this.a1.update();
+            this.a2.update();
+            this.a3.update();
+            this.a1.display();
+            this.a2.display();
+            this.a3.display();
+            
+        }
     }
     pop();
 };
