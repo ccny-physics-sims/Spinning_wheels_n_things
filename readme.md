@@ -1,5 +1,7 @@
 # Documentation for Wheel object
 
+**note - from here on out. the examples and files in this repo will not be updated. For updating info and code for the wheel object, as well as, working examples, please check out the scient-library repo.**
+
 The wheel object is for demonstrating rotational motion. It includes displaying vectors of parts of motion and displaying the visual nature of a non-slippling rim of length S in comparison to floor distance D.
 
 ![conceptual example](distance.png)
