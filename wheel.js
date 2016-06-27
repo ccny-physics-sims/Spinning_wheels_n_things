@@ -33,9 +33,9 @@ var wheel = function(_x,_y,_d){
     this.a2.width = 10;
     this.a3.width = 10;
     
-    this.a1.color = color(0,255,0);
-    this.a2.color = color(0,255,0);
-    this.a3.color = color(0,255,0);
+    this.a1.color = color('green');
+    this.a2.color = color('green');
+    this.a3.color = color('green');
     //arrow display options
     //-> static/relative
 };
@@ -55,7 +55,7 @@ wheel.prototype.draw = function(){
     fill(200);
     ellipse(0,0,this.d*0.8,this.d*0.8); 
     fill(0);
-    ellipse(0,0,this.d*0.05,this.d*0.05); 
+    //ellipse(0,0,this.d*0.05,this.d*0.05); 
     
     //draw the spokes of the wheel
     stroke(0);
@@ -86,15 +86,18 @@ wheel.prototype.draw = function(){
         ellipse(-this.r,0,10,10);
     }
     pop();
-    push();
     if(this.vdecorate == true){
         //translation vector
         if(this.rotation == true){
-            this.a1.origin = createVector(this.x,this.y-this.r);
-            this.a1.target = createVector(this.x+this.r,this.y-this.r);
+            this.a1.origin.x = this.x;
+            this.a1.origin.y = this.y-this.r;
+            this.a1.target.x = this.x+this.r;
+            this.a1.target.y = this.y-this.r;
 
-            this.a2.origin = createVector(this.x,this.y+this.r);
-            this.a2.target = createVector(this.x-this.r,this.y+this.r);
+            this.a2.origin.x = this.x;
+            this.a2.origin.y = this.y+this.r;
+            this.a2.target.x = this.x-this.r;
+            this.a2.target.y = this.y+this.r;
             
             this.a1.update();
             this.a2.update();
@@ -103,14 +106,20 @@ wheel.prototype.draw = function(){
         }
         //spin vector
         else if(this.translation == true){
-            this.a1.origin = createVector(this.x,this.y-this.r);
-            this.a1.target = createVector(this.x+this.r,this.y-this.r);
+            this.a1.origin.x = this.x;
+            this.a1.origin.y = this.y-this.r;
+            this.a1.target.x = this.x+this.r;
+            this.a1.target.y = this.y-this.r;
 
-            this.a2.origin = createVector(this.x,this.y);
-            this.a2.target = createVector(this.x+this.r,this.y);
+            this.a2.origin.x = this.x;
+            this.a2.origin.y = this.y;
+            this.a2.target.x = this.x+this.r;
+            this.a2.target.y = this.y;
             
-            this.a3.origin = createVector(this.x,this.y+this.r);
-            this.a3.target = createVector(this.x+this.r,this.y+this.r);
+            this.a3.origin.x = this.x;
+            this.a3.origin.y = this.y+this.r;
+            this.a3.target.x = this.x+this.r;
+            this.a3.target.y = this.y+this.r;
 
             this.a1.update();
             this.a2.update();
@@ -121,6 +130,5 @@ wheel.prototype.draw = function(){
             
         }
     }
-    pop();
 };
 wheel.prototype.update = function(){};
